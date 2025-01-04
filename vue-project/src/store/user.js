@@ -3,9 +3,13 @@ import axios from "axios";
 import router from "@/router";
 
 export const userState = defineStore('user', {
+  persist: true,
     state: () => ({
 user:null        }),
     getters: {
+      logout(){
+        this.user = null
+      },
       getUser: (state) => state.user
     },
     actions: {
